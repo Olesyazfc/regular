@@ -13,7 +13,7 @@ def reg_cont():
     cont1 = list(cont.split())
     names = f'{cont1[0]} {cont1[1]}'
     number = contact[5]
-    pattern = re.compile(r"(\+7|8)\D*([\d]{3})\D{0,2}(\d{3})\D?([\d]{2})\D?([\d]{2})\s?\(?(доб\.[\s]?[\d]{4})*")
+    pattern = re.compile(r"(\+7|8)\D*([\d]{3})\D{0,2}(\d{3})\D?([\d]{2})\D?([\d]{2})\s?\(?(доб\.[\s]?[\d]{4})?\)?")
     new_number = pattern.sub(r"+7(\2)\3-\4-\5 \6", number)
     contact[5] = new_number
     if len(cont1) == 2:
